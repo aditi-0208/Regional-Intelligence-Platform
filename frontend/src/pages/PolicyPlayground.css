@@ -1,0 +1,300 @@
+/* ===== Page container ===== */
+.policy-playground-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== Header band ===== */
+.policy-playground-hero {
+  background: #006747;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.policy-playground-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.9rem;
+}
+
+.policy-playground-subtitle {
+  margin: 0;
+  font-size: 0.98rem;
+  max-width: 40rem;
+  line-height: 1.5;
+}
+
+/* ===== Two-column layout ===== */
+.policy-playground-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+/* ===== Cards / panels ===== */
+.policy-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.25rem 1.5rem;
+}
+
+.policy-card-header {
+  margin-bottom: 1rem;
+}
+
+.policy-card-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #004e36;
+}
+
+.policy-card-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.policy-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===== Form controls ===== */
+.policy-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.policy-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #002c1b;
+}
+
+.policy-select,
+.policy-input {
+  padding: 0.55rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.policy-select:disabled {
+  background-color: #f3f3f3;
+  cursor: not-allowed;
+}
+
+.policy-hint {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Regions list */
+.policy-region-list {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 0.5rem 0.75rem;
+  background: #fafafa;
+}
+
+.policy-region-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.policy-region-row:last-child {
+  margin-bottom: 0;
+}
+
+.policy-region-row label {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.policy-region-count {
+  font-size: 0.78rem;
+  color: #555;
+}
+
+.policy-region-warning {
+  font-size: 0.78rem;
+  color: #b25231;
+}
+
+.policy-date-range {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.policy-date-range span {
+  text-align: center;
+  font-weight: 600;
+  color: #004e36;
+}
+
+/* Chart type toggle */
+.policy-chart-type {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+}
+
+.policy-chart-type label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+/* Buttons */
+.policy-actions {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.policy-primary-btn {
+  background-color: #466069;
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.policy-primary-btn:hover {
+  background-color: #4c6066;
+  transform: translateY(-1px);
+}
+
+.policy-secondary-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.policy-secondary-btn {
+  flex: 1;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+.policy-secondary-btn:hover {
+  background-color: #ecedee;
+}
+
+/* ===== Right side: chart and insights ===== */
+.policy-main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.policy-chart-empty {
+  height: 360px;
+  border-radius: 10px;
+  border: 2px dashed #d0d0d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+}
+
+.policy-chart-empty-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.policy-chart-empty-text {
+  font-size: 0.9rem;
+}
+
+.policy-chart-meta {
+  border-top: 1px solid #eee;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.policy-chart-meta-label {
+  color: #666;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.policy-chart-meta-value {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Insights card */
+.policy-insights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.policy-insights-item {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.policy-insights-bullet {
+  color: #466069;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .policy-playground-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .policy-playground-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .policy-playground-hero {
+    padding: 1.25rem 1rem;
+  }
+
+  .policy-card {
+    padding: 1rem 1.1rem;
+  }
+}
+
+

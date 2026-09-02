@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+.methodology-page {
+  --navy: #1A3A2A;
+  --blue: #1A5FA5;
+  --blue-lt: #E6F1FB;
+  --green: #0F6E56;
+  --green-lt: #E1F5EE;
+  --amber: #854F0B;
+  --amber-lt: #FAEEDA;
+  --gray-0: #FAFAF8;
+  --gray-1: #F2F2EF;
+  --gray-2: #E4E4E0;
+  --gray-3: #B0B0AA;
+  --gray-4: #6B6B66;
+  --gray-5: #2A2A28;
+  --r: 6px;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+  --serif: "DM Serif Display", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  font-family: var(--sans);
+  color: var(--gray-5);
+  background: var(--gray-0);
+}
+
+.methodology-page .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.methodology-page .section {
+  padding: 3rem 0;
+}
+.methodology-page .section + .section {
+  border-top: 1px solid var(--gray-2);
+}
+
+.methodology-page .page-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: var(--gray-5);
+  font-weight: 400;
+  letter-spacing: -.02em;
+  margin: 0 0 .5rem;
+}
+
+.methodology-page .lead {
+  font-size: .95rem;
+  color: var(--gray-4);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0;
+}
+
+.methodology-page .header-lead {
+  margin-bottom: 1rem;
+}
+
+.methodology-page .section-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--gray-5);
+  margin-bottom: .5rem;
+  letter-spacing: -.01em;
+}
+
+.methodology-page .framework-title { margin-bottom: 1.5rem; }
+.methodology-page .sources-title,
+.methodology-page .score-title,
+.methodology-page .limits-title { margin-bottom: 1rem; }
+
+.methodology-page .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: var(--r);
+  font-size: .8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  font-family: var(--sans);
+  transition: all .15s;
+  text-decoration: none;
+  background: transparent;
+}
+.methodology-page .btn-outline {
+  color: var(--gray-4);
+  border: 1px solid var(--gray-2);
+}
+.methodology-page .btn-outline:hover {
+  border-color: var(--gray-3);
+  color: var(--gray-5);
+}
+.methodology-page .btn-sm {
+  padding: 6px 12px;
+  font-size: .75rem;
+}
+
+.methodology-page .card {
+  background: #fff;
+  border: 1px solid var(--gray-2);
+  border-radius: var(--r);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+/* Header */
+.methodology-page .methodology-header {
+  background: #fff;
+  border-bottom: 1px solid var(--gray-2);
+  padding: 2.5rem 0;
+}
+
+/* Framework */
+.methodology-page .framework-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.methodology-page .framework-intro {
+  font-size: .875rem;
+  color: var(--gray-4);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+}
+
+.methodology-page .pillar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--r);
+  margin-bottom: 8px;
+}
+.methodology-page .pillar-row-blue { background: var(--blue-lt); }
+.methodology-page .pillar-row-green { background: var(--green-lt); }
+.methodology-page .pillar-row-amber { background: var(--amber-lt); }
+.methodology-page .pillar-row-purple { background: #EEEDFE; }
+
+.methodology-page .pillar-row-name {
+  font-weight: 600;
+  font-size: .875rem;
+  flex: 1;
+}
+.methodology-page .pillar-row-blue .pillar-row-name { color: var(--blue); }
+.methodology-page .pillar-row-green .pillar-row-name { color: var(--green); }
+.methodology-page .pillar-row-amber .pillar-row-name { color: var(--amber); }
+.methodology-page .pillar-row-purple .pillar-row-name { color: #3C3489; }
+
+.methodology-page .pillar-weight {
+  font-size: .75rem;
+  font-weight: 500;
+}
+.methodology-page .pillar-row-blue .pillar-weight { color: var(--blue); }
+.methodology-page .pillar-row-green .pillar-weight { color: var(--green); }
+.methodology-page .pillar-row-amber .pillar-weight { color: var(--amber); }
+.methodology-page .pillar-row-purple .pillar-weight { color: #3C3489; }
+
+.methodology-page .framework-chart-label {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--gray-3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 1rem;
+}
+.methodology-page .framework-chart-wrap {
+  height: 220px;
+}
+
+/* Data table */
+.methodology-page .sources-intro {
+  font-size: .85rem;
+  color: var(--gray-4);
+  margin: 0 0 1.25rem;
+}
+
+.methodology-page .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8rem;
+}
+.methodology-page .data-table th {
+  padding: 9px 12px;
+  text-align: left;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  border-bottom: 2px solid var(--gray-2);
+  background: var(--gray-1);
+}
+.methodology-page .data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-2);
+  color: var(--gray-5);
+  vertical-align: top;
+}
+.methodology-page .data-table td.pillar-cell {
+  color: var(--blue);
+  font-weight: 500;
+  font-size: .7rem;
+}
+
+/* Score explainer */
+.methodology-page .score-explainer {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.methodology-page .score-text {
+  font-size: .875rem;
+  color: var(--gray-4);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.methodology-page .score-text:last-child {
+  margin-bottom: 0;
+}
+
+.methodology-page .example-box {
+  background: var(--blue-lt);
+  border: 1px solid #85B7EB;
+  border-radius: var(--r);
+  padding: 1.25rem;
+}
+.methodology-page .example-box-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: .5rem;
+}
+.methodology-page .example-box-text {
+  font-size: .85rem;
+  color: #0C447C;
+  line-height: 1.6;
+}
+
+/* Limitations */
+.methodology-page .limits-box {
+  background: #FFF8E6;
+  border: 1px solid #F0D89A;
+  border-radius: var(--r);
+  padding: 1.25rem;
+}
+.methodology-page .limit-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(133,79,11,.1);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.methodology-page .limit-item:last-child {
+  border-bottom: none;
+}
+.methodology-page .limit-bullet {
+  color: var(--amber);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Footer */
+.methodology-page .site-footer {
+  background: var(--gray-5);
+  color: rgba(255,255,255,.5);
+  padding: 2rem 0;
+}
+.methodology-page .footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.methodology-page .footer-brand {
+  font-family: var(--serif);
+  color: #fff;
+  font-size: 1rem;
+}
+.methodology-page .footer-sub {
+  font-size: .75rem;
+  margin-top: 3px;
+}
+.methodology-page .footer-links {
+  display: flex;
+  gap: 20px;
+  font-size: .75rem;
+}
+.methodology-page .footer-links a {
+  color: rgba(255,255,255,.4);
+  text-decoration: none;
+}
+.methodology-page .footer-links a:hover {
+  color: rgba(255,255,255,.75);
+}
+
+@media (max-width: 860px) {
+  .methodology-page .framework-grid,
+  .methodology-page .score-explainer {
+    grid-template-columns: 1fr;
+  }
+  .methodology-page .data-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .methodology-page .container { padding: 0 1rem; }
+  .methodology-page .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,168 @@
+:root{
+  --usf-green: #006747;
+  --header-bg: #006747;
+
+  /* banner-approved colors only */
+  --usf-sand: #EDEBD1;
+  --usf-gold: #CFC493;
+
+  --header-h: 90px;
+}
+
+/* Layout */
+.header{
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 16px;
+  min-height: var(--header-h);
+  padding: 10px 24px;
+  background: #006747;
+  border-bottom: 1px solid #e7eceb;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header.scrolled{ box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+
+.logo-group{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.logo-img{ height: 38px; width: auto; }
+
+/* Banner lockup */
+/* Banner lockup – matches PDF exactly */
+.logo-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;                /* no extra spacing between lines */
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/* Top line: 21pt text, 21pt line-height */
+.logo-line1{
+  font-size: 28px;     /* 21pt */
+  line-height: 28px;   /* 21pt */
+  font-weight: 700;    /* plain Helvetica */
+  margin: 0;
+  white-space: nowrap;
+}
+
+.logo-line2{
+  font-size: 18px;     /* 18pt */
+  line-height: 28px;   /* 21pt */
+  font-weight: 400;
+  letter-spacing: 0;   /* IMPORTANT: PDF has no tracking */
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+/* Nav */
+.nav{
+  display: flex; gap: 30px; margin-left: auto;
+  align-items: center;
+}
+.nav a{ text-decoration: none; color: #ffffff; font-weight: 600; }
+
+/* Davina: don’t use gold highlight; keep within banner palette */
+.nav a.active{
+  color: var(--usf-sand);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* Toggle (mobile) */
+.nav-toggle{ display:none; background:none; border:none; margin-left:auto; }
+.nav-toggle .bar{ display:block; width:22px; height:2px; background:#ffffff; margin:5px 0; }
+
+/* Responsive behavior */
+@media (max-width: 900px){
+  .nav-toggle{ display:block; }
+  .nav{
+    position: absolute; top: var(--header-h); left: 0; right: 0;
+    background: var(--header-bg);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    display: none; flex-direction: column; gap: 14px; padding: 14px 20px 18px;
+  }
+  .nav.open{ display: flex; }
+}
+
+/* ── Wireframe header (home page) ─────────────────────────────── */
+.header--wireframe {
+  --header-h: 56px;
+  background: #1A3A2A;
+  min-height: var(--header-h);
+  height: 56px;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+.header--wireframe .nav-brand {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-right: auto;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.header--wireframe .nav-brand span {
+  color: rgba(255,255,255,.45);
+  font-size: .75rem;
+  margin-left: 8px;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 300;
+}
+
+.header--wireframe .nav--wireframe {
+  display: flex;
+  gap: 2px;
+  margin-left: 0;
+}
+
+.header--wireframe .nav--wireframe a {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .8rem;
+  color: rgba(255,255,255,.55);
+  font-weight: 400;
+  text-decoration: none;
+  transition: all .15s;
+}
+
+.header--wireframe .nav--wireframe a:hover {
+  color: #fff;
+  background: rgba(255,255,255,.07);
+}
+
+.header--wireframe .nav--wireframe a.active {
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .header--wireframe .nav-brand span { display: none; }
+  .header--wireframe .nav--wireframe {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: #1A3A2A;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px 16px;
+  }
+  .header--wireframe .nav--wireframe.open { display: flex; }
+  .header--wireframe .nav--wireframe a { width: 100%; }
+}
