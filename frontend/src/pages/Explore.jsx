@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import {
   fetchCategories, fetchStates, fetchGeographies, fetchSeries, fetchRankings,
-  formatValue, formatDelta, summarize, toCsv, downloadCsv,
+  formatValue, formatDelta, summarize, toCsv, downloadCsv,fetchComparison,
 } from '../api/sotr';
 import { useApi } from '../hooks/useApi';
 import './Explore.css';
@@ -82,10 +82,10 @@ const Explore = () => {
     if (Object.keys(patch).length) setParam(patch);
   }, [categories.data, categoryId, indicatorId, setParam]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (geoIds.length || !geographies.data?.length) return;
     setParam({ geos: geographies.data.slice(0, 3).map((g) => g.geo_id).join(',') });
-  }, [geographies.data, geoIds.length, setParam]);
+  }, [geographies.data, geoIds.length, setParam]);*/
 
   /* ------------------------------- data -------------------------------- */
 
@@ -100,6 +100,18 @@ const Explore = () => {
     [indicator?.id, level, yearEnd, geoIds.join(',')],
     { enabled: Boolean(indicator?.id) && geoIds.length > 0 }
   );
+
+  const comparison = useApi(
+  () => fetchComparison({
+    indicator: indicator.id,
+    countyA: geoIds[0],
+    countyB: geoIds[1],
+    startYear: yearStart,
+    endYear: yearEnd,
+  }),
+  [indicator?.id, geoIds[0], geoIds[1], yearStart, yearEnd],
+  { enabled: Boolean(indicator?.id) && geoIds.length === 2 }
+);
 
   const unit = series.data?.indicator?.unit || indicator?.unit;
   const rows = series.data?.data || [];
@@ -324,7 +336,11 @@ const Explore = () => {
               </div>
             </div>
 
-            {series.loading ? (
+            {!geoIds.length ? (
+              <div className="chart-canvas-wrap" style={{ display: 'grid', placeItems: 'center', color: '#888' }}>
+                Choose 2 counties to compare.
+              </div>
+            ) :series.loading ? (
               <div className="chart-canvas-wrap" style={{ display: 'grid', placeItems: 'center', color: '#888' }}>
                 Loading…
               </div>
@@ -457,7 +473,27 @@ const Explore = () => {
               ))}
             </div>
           </div>
-
+              {comparison.data?.insights?.length > 0 && (
+  <div className="insights-panel">
+    <div className="insights-header">Key findings</div>
+    {comparison.data.insights.map((text, i) => (
+      <div className="insight-item" key={i}>
+        <span className="insight-marker">→</span>
+        <span>{text}</span>
+      </div>
+    ))}
+    {comparison.data.notes?.length > 0 && (
+      <div className="data-notes">
+        {comparison.data.notes.map((note, i) => (
+          <div className="note-item" key={i}>
+            <span>⚠</span>
+            <span>{note}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+)}
           <div className="card national-context">
             <h2 className="section-title national-title">National context</h2>
             <p className="national-desc">

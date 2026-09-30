@@ -24,6 +24,10 @@ export const fetchSeries = ({ indicator, geos, from, to }) =>
   get('/api/explore/series', { indicator, geos: geos.join(','), from, to });
 export const fetchRankings = ({ indicator, level, period, geos }) =>
   get('/api/explore/rankings', { indicator, level, period, geos: geos.join(',') });
+export const fetchComparison = ({ indicator, countyA, countyB, startYear, endYear }) =>
+  get('/api/explore/comparison', {
+    indicator, county_a: countyA, county_b: countyB, start_year: startYear, end_year: endYear,
+  });
 
 /* ----------------------------- formatting ----------------------------- */
 

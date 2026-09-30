@@ -397,7 +397,51 @@
   color: var(--gray-5);
   font-weight: 500;
 }
+/* Insights panel */
+.explore-page .insights-panel {
+  background: #fff;
+  border: 1px solid var(--gray-2);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.explore-page .insights-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--gray-2);
+  font-weight: 600;
+  font-size: .875rem;
+}
+.explore-page .insight-item {
+  display: flex;
+  gap: 10px;
+  padding: .9rem 1.25rem;
+  font-size: .85rem;
+  color: var(--gray-5);
+  line-height: 1.55;
+}
+.explore-page .insight-item + .insight-item {
+  border-top: 1px solid var(--gray-1);
+}
+.explore-page .insight-marker {
+  color: var(--blue);
+  font-weight: 700;
+  flex-shrink: 0;
+}
 
+/* Data caveats */
+.explore-page .data-notes {
+  padding: .85rem 1.25rem;
+  background: var(--gray-1);
+  border-top: 1px solid var(--gray-2);
+}
+.explore-page .note-item {
+  font-size: .75rem;
+  color: var(--gray-4);
+  display: flex;
+  gap: 6px;
+  padding: 2px 0;
+}
 /* Rankings table */
 .explore-page .rankings-table {
   width: 100%;
